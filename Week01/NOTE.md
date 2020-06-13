@@ -151,17 +151,9 @@ private E removeAt(int i) {
         }
         return null;
  }
- // 查询 O(n)
- public boolean contains(Object o) {
-        return indexOf(o) != -1;
- }
- private int indexOf(Object o) {
-        if (o != null) {
-            for (int i = 0; i < size; i++)
-                if (o.equals(queue[i]))
-                    return i;
-        }
-        return -1;
+ // 查询（一般是查队首元素（最高优先级）） O(1)
+ public E peek() {
+        return (size == 0) ? null : (E) queue[0];
  }
 ```
 
